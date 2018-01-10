@@ -12,4 +12,5 @@ ___Пример выходных данных___ : !x1x2!x3 U x3x4x5 ...,
 Пример компиляции: ___C:\Users\mixan\source\repos\DZ1\Debug\DZ1.exe C:\Users\mixan\Desktop\Test\Initial_data\1.dat C:\Users\mixan\Desktop\text.txt C:\Users\mixan\Desktop\Test\output\1.tst___  
 # Тесты  
 В тестовый файл надо записать минимальную ДНФ, где литералы идут в порядке возрастания. Импликанты разделены знаком ___"U"___ и двумя пробелами до и после U.  
-___Например___ : !x0!x1 U x2
+___Например___ : !x0!x1 U x2  
+Входные файлы лежат в ___Test/Initial_data___, выходные - в ___/Test/output___
