@@ -1,10 +1,4 @@
-// DZ1.cpp: определяет точку входа для консольного приложения.
-//
-#include "stdafx.h"
 #include "Header.h"
-
-
-
 
 bool Trash (const std::string &impl)
 {
