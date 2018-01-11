@@ -1,4 +1,8 @@
+#include "stdafx.h"
 #include "Header.h"
+
+
+
 
 bool Trash (const std::string &impl)
 {
@@ -153,32 +157,29 @@ std::string Absorption(const std::string &a, const std::string &b)
 	return result;
 }
 
-std::string Bin(int x, int len) {
-
+std::string Bin(int x, int len) 
+{
 	std::string result;
-
-	while (x > 0) {
-
+	while (x > 0) 
+	{
 		int buf = x & 1;
 		x = x >> 1;
 		result.append(std::to_string(buf));
 	}
 	std::reverse(result.begin(), result.end());
-	if (result.length() < len) {
-
+	if (result.length() < len) 
+	{
 		int delta = len - result.length();
 		std::string zeros;
-
 		for (int i = 0; i < delta; ++i)
 			zeros.append("0");
-
 		result = zeros + result;
 	}
-
 	return result;
 }
 
-vector_t Make_sdnf(std::string & func_values) {
+vector_t Make_sdnf(std::string & func_values) 
+{
 
 	vector_t sdnf;
 	double len = log2(func_values.size());
@@ -318,10 +319,8 @@ int main(int argc, char *argv[])
 		std::string bin_vector;
 		if (Read_param(argv[1], bin_vector))
 		{
-			vector_t data = Make_sdnf(bin_vector);
-			vector_t h = Abbreviated_dnf(data);
 			std::vector <std::string> cec;
-			ImplMatrix M(data, h);
+			ImplMatrix M(Make_sdnf(bin_vector), Abbreviated_dnf(Make_sdnf(bin_vector)));
 			cec = M.MDNF();
 			Write_ans(argv[2], Make_formula(cec));
 		}
@@ -332,4 +331,3 @@ int main(int argc, char *argv[])
 	}
 	return 0;
 }
-
