@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include <vector>
 #include <cmath>
@@ -21,7 +20,7 @@ bool Owns(const std::string &A,const std::string &B)
 	return true;
 }
 
-int Weight(std::string a)
+int Weight(const std::string & a)
 {
 	int k = 0;
 	for (int i = 0; i < a.size(); i++)
@@ -51,7 +50,7 @@ std::vector<std::vector<int>> Implmult(std::vector<std::vector<int>> a, std::vec
 	return result;
 }
 
-std::vector<std::string> Cover(bool **mat,std::vector<int>nepokr,std::vector<int>ignor,vector_t &ADNF)
+std::vector<std::string> Cover(bool  **mat,const std::vector<int> & nepokr,const std::vector<int> & ignor,vector_t &ADNF)
 {
 	std::vector<std::string> a;
 	std::vector<std::vector<std::vector<int>>> patrik;
@@ -214,5 +213,7 @@ public:
 		delete[]mat;
 	}
 };
+
+
 
 
