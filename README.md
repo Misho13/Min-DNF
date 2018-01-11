@@ -50,5 +50,12 @@ ___Например___ : !x0!x1 U x2
 * `std::vector<std::string> Cover(bool  **mat,const std::vector<int> & nepokr,const std::vector<int> & ignor,vector_t &ADNF)` - эта функция ищет минимальное покрытие. Она использует функции `int Weight(const std::string & a)` и  `std::vector<std::vector<int>> Implmult(std::vector<std::vector<int>> a, std::vector<std::vector <int>> b)`.  
 * `std::vector<std::vector<int>> Implmult(std::vector<std::vector<int>> a, std::vector<std::vector <int>> b)` - реализует перемножение простых импликант и возвращает его.  
 
-В cpp файле имеются следующие вспомогательные функции:
+В cpp файле имеются следующие вспомогательные функции:  
+
+* `vector_t Make_sdnf(std::string & func_values)` - функция, которая получает строку нулей и единиц и возвращает вектор строк(СДНФ).  
+* `std::string Bin(int x, int len) ` - принимает длину импликанты и ее порядковый номер, возвращает импликанту в виде строки нулей и единиц, где 0 - означает отрицание, а 1 - наоборот. Например, запись 0011 означает !x1!x2x3x4.  
+* `vector_t Abbreviated_dnf(vector_t data)` - примает СДНФ, сокращенную ДНФ. В ней вызывает функции отвечающие за склейку и поглощение.  
+* `vector_t Abbreviate(vector_t data,std::string (*function)(const std::string &, const std::string &))` - функция, которая принимает вектор стрингов, в котором записан СДНФ, и функции либо `Gluing`, либо  `Absorption`, которые либо склеивает импликанты, либо поглощает их.  
+* `std::string Gluing(const std::string &a, const std::string &b)` - функция склейки. Принимает две строки, если находит 1 литерал, который отрицательный в одной строке и положительный в другой, заменяет его на 2 и возвращает получившуюся строку.  
+* `std::string Absorption(const std::string &a, const std::string &b) ` - функция поглощения. Принимает две строки, если 
 
