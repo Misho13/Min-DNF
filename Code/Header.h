@@ -113,7 +113,6 @@ class ImplMatrix
 {
 private:
 	bool ** mat;
-	std::vector<std::vector<int>> pokr_stb;
 	vector_t SDNF;
 	vector_t ADNF;
 	void fill()
